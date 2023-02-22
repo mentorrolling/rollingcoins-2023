@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const NavBarApp = () => {
+const NavBarApp = ({ cambiarLogin }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-      <div className="container-fluid">
+      <div className="container">
         <Link className="navbar-brand" to="/">
           <i className="fa fa-btc" aria-hidden="true"></i>
           RollingCoins
@@ -21,7 +21,7 @@ const NavBarApp = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <NavLink className="nav-link" aria-current="page" to="/">
                 Home
@@ -36,6 +36,11 @@ const NavBarApp = () => {
               <NavLink className="nav-link" to="/admin">
                 Admin
               </NavLink>
+            </li>
+            <li>
+              <button onClick={cambiarLogin} className="btn btn-outline-light">
+                Log out
+              </button>
             </li>
           </ul>
         </div>
